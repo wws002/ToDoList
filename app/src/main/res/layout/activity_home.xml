@@ -7,6 +7,13 @@
     android:background="#000022"
     tools:context="com.csce4623.ahnelson.todolist.HomeActivity">
 
+    <ListView
+        android:id="@+id/noteList"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <Button
         android:id="@+id/btnNewNote"
         android:layout_width="75dp"
