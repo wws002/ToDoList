@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,6 +26,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     void initializeComponents(){
         findViewById(R.id.btnNewNote).setOnClickListener(this);
         findViewById(R.id.btnDeleteNote).setOnClickListener(this);
+        ListView listView = findViewById(R.id.noteList);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Click ListItem Number " + id, Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         //Create the projection for the query
@@ -83,10 +91,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             //If deleted, didWork returns the number of rows deleted (should be 1)
             if (didWork == 1) {
                 //If it didWork, then create a Toast Message saying that the note was deleted
-                Toast.makeText(getApplicationContext(), "Deleted Note " + newestId, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Deleted Note " + newestId, Toast.LENGTH_SHORT).show();
             }
         } else{
-            Toast.makeText(getApplicationContext(), "No Note to delete!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "No Note to delete!", Toast.LENGTH_SHORT).show();
         }
 
         initializeComponents();

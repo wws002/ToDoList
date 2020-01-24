@@ -44,7 +44,7 @@ public class NoteActivity extends AppCompatActivity {
         //Perform a query to get all rows in the DB
         Cursor myCursor = getContentResolver().query(ToDoProvider.CONTENT_URI,projection,null,null,null);
         //Create a toast message which states the number of rows currently in the database
-        Toast.makeText(getApplicationContext(),Integer.toString(myCursor.getCount()),Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),Integer.toString(myCursor.getCount()),Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
