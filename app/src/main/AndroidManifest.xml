@@ -17,9 +17,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NoteActivity">
-
-        </activity>
+        <activity android:name=".NoteActivity"></activity>
+        <activity android:name=".EditActivity"></activity>
 
         <provider
             android:name=".ToDoProvider"

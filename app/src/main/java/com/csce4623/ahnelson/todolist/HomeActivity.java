@@ -20,32 +20,35 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         initializeComponents();
+        initializeListComponents();
     }
 
     //Set the OnClick Listener for buttons
     void initializeComponents(){
         findViewById(R.id.btnNewNote).setOnClickListener(this);
         findViewById(R.id.btnDeleteNote).setOnClickListener(this);
-        ListView listView = findViewById(R.id.noteList);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Click ListItem Number " + id, Toast.LENGTH_SHORT).show();
-            }
-        });
-
 
         //Create the projection for the query
         String[] projection = {
                 ToDoProvider.TODO_TABLE_COL_ID,
                 ToDoProvider.TODO_TABLE_COL_TITLE,
                 ToDoProvider.TODO_TABLE_COL_CONTENT};
-
         //Perform a query to get all rows in the DB
         Cursor myCursor = getContentResolver().query(ToDoProvider.CONTENT_URI,projection,null,null,null);
         ListView lvItems = findViewById(R.id.noteList);
         ToDoCursorAdapter todoAdapter = new ToDoCursorAdapter(this, myCursor);
         lvItems.setAdapter(todoAdapter);
+    }
+
+    void initializeListComponents(){
+        ListView listView = findViewById(R.id.noteList);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Click ListItem Number " + id, Toast.LENGTH_SHORT).show();
+                editNote(id);
+            }
+        });
     }
 
     @Override
@@ -68,6 +71,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     //Create a new note with the title "New Note" and content "Note Content"
     void createNewNote(){
         Intent intent = new Intent(this, NoteActivity.class);
+        startActivity(intent);
+    }
+
+    void editNote(long id){
+        Intent intent = new Intent(this, EditActivity.class);
+        intent.putExtra("listItemID", id);
         startActivity(intent);
     }
 
