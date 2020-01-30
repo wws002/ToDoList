@@ -36,15 +36,6 @@ public class NoteActivity extends AppCompatActivity {
         myCV.put(ToDoProvider.TODO_TABLE_COL_CONTENT, content);
         //Perform the insert function using the ContentProvider
         getContentResolver().insert(ToDoProvider.CONTENT_URI,myCV);
-        //Set the projection for the columns to be returned
-        String[] projection = {
-                ToDoProvider.TODO_TABLE_COL_ID,
-                ToDoProvider.TODO_TABLE_COL_TITLE,
-                ToDoProvider.TODO_TABLE_COL_CONTENT};
-        //Perform a query to get all rows in the DB
-        Cursor myCursor = getContentResolver().query(ToDoProvider.CONTENT_URI,projection,null,null,null);
-        //Create a toast message which states the number of rows currently in the database
-        Toast.makeText(getApplicationContext(),Integer.toString(myCursor.getCount()),Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);

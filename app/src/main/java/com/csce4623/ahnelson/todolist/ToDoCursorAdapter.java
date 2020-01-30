@@ -25,15 +25,12 @@ public class ToDoCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         // Find fields to populate in inflated template
-        TextView tvID = view.findViewById(R.id.tvID);
         TextView tvTitle = view.findViewById(R.id.tvTitle);
         TextView tvContent = view.findViewById(R.id.tvContent);
         // Extract properties from cursor
-        String id = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
         String title = cursor.getString(cursor.getColumnIndexOrThrow("TITLE"));
         String content = cursor.getString(cursor.getColumnIndexOrThrow("CONTENT"));
         // Populate fields with extracted properties
-        tvID.setText(id);
         tvTitle.setText(title);
         tvContent.setText(content);
     }

@@ -5,16 +5,9 @@
     android:orientation="horizontal"
     android:background="#000022">
     <TextView
-        android:id="@+id/tvID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="id"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        style="@style/noteText"/>
-    <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:text="title"
@@ -23,7 +16,7 @@
     <TextView
         android:id="@+id/tvContent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         style="@style/noteText"/>
