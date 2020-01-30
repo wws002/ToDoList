@@ -26,7 +26,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     //Set the OnClick Listener for buttons
     void initializeComponents(){
         findViewById(R.id.btnNewNote).setOnClickListener(this);
-        findViewById(R.id.btnDeleteNote).setOnClickListener(this);
 
         //Create the projection for the query
         String[] projection = {
@@ -57,10 +56,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             //If new Note, call createNewNote()
             case R.id.btnNewNote:
                 createNewNote();
-                break;
-            //If delete note, call deleteNewestNote()
-            case R.id.btnDeleteNote:
-                deleteNewestNote();
                 break;
             //This shouldn't happen
             default:
