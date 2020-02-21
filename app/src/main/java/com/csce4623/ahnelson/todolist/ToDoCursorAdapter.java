@@ -9,7 +9,7 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 public class ToDoCursorAdapter extends CursorAdapter {
-    public ToDoCursorAdapter(Context context, Cursor cursor) {
+    ToDoCursorAdapter(Context context, Cursor cursor) {
         super(context, cursor, 0);
     }
 
