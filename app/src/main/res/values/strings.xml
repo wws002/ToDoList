@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ToDoList</string>
+    <string name="app_name">Notes</string>
     <string name="new_note">New</string>
     <string name="delete_note">Delete</string>
 

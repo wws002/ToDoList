@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StudioProjects-ToDoList.iml" filepath="$PROJECT_DIR$/.idea/modules/StudioProjects-ToDoList.iml" group="ToDoList" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Notes.iml" filepath="$PROJECT_DIR$/.idea/modules/Notes.iml" group="Notes" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Notes-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Notes-app.iml" group="Notes/app" />
       <module fileurl="file://$PROJECT_DIR$/ToDoList.iml" filepath="$PROJECT_DIR$/ToDoList.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ToDoList-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ToDoList-app.iml" group="ToDoList/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
