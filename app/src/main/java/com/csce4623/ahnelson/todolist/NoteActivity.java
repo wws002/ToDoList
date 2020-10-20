@@ -3,6 +3,7 @@ package com.csce4623.ahnelson.todolist;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -36,6 +37,19 @@ public class NoteActivity extends AppCompatActivity {
         myCV.put(ToDoProvider.TODO_TABLE_COL_CONTENT, content);
         //Perform the insert function using the ContentProvider
         getContentResolver().insert(ToDoProvider.CONTENT_URI,myCV);
+
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void deleteNote(View v){
+        Intent oldIntent = getIntent();
+        Long id = oldIntent.getLongExtra("listItemID", 0);
+
+        int didWork = getContentResolver().delete(Uri.parse(ToDoProvider.CONTENT_URI + "/" + id), null, null);
+        if(didWork == 1){
+            Toast.makeText(getApplicationContext(), "Deleted Note", Toast.LENGTH_SHORT).show();
+        }
 
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
